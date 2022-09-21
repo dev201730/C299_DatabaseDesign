@@ -1,0 +1,52 @@
+HotelDB database is designed for the purpose of managing data regarding Hotel Reservations.
+It contains the following tables:
+
+
+1. roomTypes TABLE to store information regarding the room OPTIONS / TYPES that the hotel has.
+It contains the following attributes:
+roomTypeId, roomTypeName, standardCapacity, maxCapacity, additionalGuestCost
+
+
+2. guests TABLE to store guest details.
+It contains the following attributes:
+guestId, firstName, lastName, address, city, stateAbbr, zip, phone
+    
+
+3. rooms TABLE to store general specs about each unique room that the hotel has.
+It contains the following attributes:
+roomId which is unique for each room,
+roomTypeId which is a foreign-key attribute from roomTypes TABLE,
+adaAccessible, basePrice
+
+
+4. amenities TABLE to store unique amenities that a room can have.
+It contains the following attributes:
+amenityId, name
+
+
+5. reservations TABLE to store general reservation info.
+It contains the following attributes:
+reservationId, startDate, endDate
+
+
+6. roomAmenities TABLE to store amenities for each room.
+It contains the following attributes:
+roomId which is a foreign-key attribute from rooms TABLE to get the unique roomId
+amenityId which is a foreign-key attribute from amenities TABLE to get the unique amenityId
+
+
+7. roomAmenities TABLE to store sets of reservationId and corresponding roomIds
+It contains the following attributes:
+roomId which is a foreign-key attribute from rooms TABLE to get the unique roomId
+reservationId which is a foreign-key attribute from reservations TABLE to get the unique reservationId
+
+
+8. guestsInReservation TABLE to store sets of guestId and corresponding reservationId's.
+It contains the following attributes:
+guestId, reservationId,
+numberOfAdults, numberOfChildren    
+        
+
+    
+    
+    
